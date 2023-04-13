@@ -43,11 +43,22 @@ body {
 		clip-path: inset(0% 0% 0% 0%);
 	}
 }
+@keyframes animate-out {
+	from {
+		opacity: 1;
+		left: 1px;
+		clip-path: inset(0% 0% 0% 0%);
+	}
+	to {
+		opacity: 0;
+		clip-path: inset(50% 0% 50% 0%);
+	}
+}
 
 .gallery__entry {
-	animation: auto linear animate-in;
+	animation: auto linear animate-in, auto linear animate-out;
 	animation-timeline: view(inline);
-	animation-range: entry;
+	animation-range: entry, exit;
 }
 
 @layer gallery {
