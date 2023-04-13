@@ -14,6 +14,24 @@ body {
 	animation-timeline: scroll();
 }
 
+/* Progress Bar */
+@keyframes adjust-progress {
+	from {
+		transform: scaleX(calc(1 / var(--num-images)));
+	}
+	to {
+		transform: scaleX(1);
+	}
+}
+.gallery__scrollcontainer {
+	scroll-timeline-name: gallery-is-scrolling;
+	scroll-timeline-axis: inline;
+}
+.gallery__progress {
+	animation: auto linear adjust-progress;
+	animation-timeline: gallery-is-scrolling;
+}
+
 @layer gallery {
 	.gallery {
 		position: relative;
