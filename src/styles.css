@@ -1,6 +1,18 @@
 @layer layout, gallery;
 
-/* Instructions: replace this line with your solution */
+/* Parallax Background */
+@keyframes move-background {
+	from {
+		background-position: 50% 0%;
+	}
+	to {
+		background-position: 50% 100%;
+	}
+}
+body {
+	animation: auto linear move-background;
+	animation-timeline: scroll();
+}
 
 @layer gallery {
 	.gallery {
