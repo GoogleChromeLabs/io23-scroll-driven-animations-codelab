@@ -32,6 +32,24 @@ body {
 	animation-timeline: gallery-is-scrolling;
 }
 
+/* Image Effect */
+@keyframes animate-in {
+	from {
+		opacity: 0;
+		clip-path: inset(50% 0% 50% 0%);
+	}
+	to {
+		opacity: 1;
+		clip-path: inset(0% 0% 0% 0%);
+	}
+}
+
+.gallery__entry {
+	animation: auto linear animate-in;
+	animation-timeline: view(inline);
+	animation-range: entry;
+}
+
 @layer gallery {
 	.gallery {
 		position: relative;
