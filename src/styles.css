@@ -33,32 +33,29 @@ body {
 }
 
 /* Image Effect */
-@keyframes animate-in {
-	from {
+@keyframes animate-in-and-out {
+	entry 0% {
 		opacity: 0;
 		clip-path: inset(50% 0% 50% 0%);
 	}
-	to {
+	entry 90% {
 		opacity: 1;
 		clip-path: inset(0% 0% 0% 0%);
 	}
-}
-@keyframes animate-out {
-	from {
+
+	exit 10% {
 		opacity: 1;
-		left: 1px;
 		clip-path: inset(0% 0% 0% 0%);
 	}
-	to {
+	exit 100% {
 		opacity: 0;
 		clip-path: inset(50% 0% 50% 0%);
 	}
 }
 
 .gallery__entry {
-	animation: auto linear animate-in, auto linear animate-out;
+	animation: auto linear animate-in-and-out;
 	animation-timeline: view(inline);
-	animation-range: entry, exit;
 }
 
 @layer gallery {
